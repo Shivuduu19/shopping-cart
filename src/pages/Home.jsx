@@ -25,7 +25,7 @@ const HomeWrapper = styled.div`
   align-items: center;
   padding: 2rem;
   gap: 2rem;
-  background-color: aliceblue;
+  background-color: #00ff55;
 `;
 const fadein = keyframes`
   0%{
@@ -47,7 +47,7 @@ const HomeInfo = styled.div`
   animation: 2s ${fadein} ease;
 `;
 const IntroInfo = styled.div`
-  color: #045622;
+  color: #1c0adc;
   font-weight: bold;
   font-size: 1rem;
   text-transform: uppercase;
@@ -62,5 +62,6 @@ const Button = styled.button`
   text-transform: uppercase;
   border-radius: 20px;
   padding: 1rem;
-  color: #134913;
+  /* color: #134913; */
 `;
+export { fadein };

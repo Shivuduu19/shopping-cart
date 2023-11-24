@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import GlobalStyle from "./themes/GlobalStyle.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import Products from "./pages/Products.jsx";
+import Products from "./pages/products/Products.jsx";
 import Contact from "./pages/Contact.jsx";
 const router = createBrowserRouter([
   {

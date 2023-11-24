@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
 import { ShoppingCart } from "phosphor-react";
-// import Contact from "../pages/Contact";
+
 const Header = () => {
   return (
     <>
