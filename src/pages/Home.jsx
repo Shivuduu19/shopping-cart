@@ -49,7 +49,7 @@ const HomeInfo = styled.div`
 const IntroInfo = styled.div`
   color: #1c0adc;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 2rem;
   text-transform: uppercase;
 `;
 const IntoBigger = styled.div`
