@@ -24,7 +24,7 @@ const Products = () => {
     const data = await response.json();
     return data;
   };
-  console.log(products);
+  // console.log(products);
 
   return (
     <ProductsWrapper>

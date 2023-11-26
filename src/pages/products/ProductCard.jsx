@@ -1,6 +1,10 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { addItem } from "../cart/CartSlice";
 
-const ProductCard = ({ image, title, price }) => {
+const ProductCard = ({ id, image, title, price, category }) => {
+  const product = { id, image, title, price, category };
+  const dispatch = useDispatch();
   return (
     <>
       <CardWrapper>
@@ -12,7 +16,9 @@ const ProductCard = ({ image, title, price }) => {
             <Title>{title}</Title>
             <div>{price}</div>
           </Info>
-          <Button>Add to Cart</Button>
+          <Button onClick={() => dispatch(addItem(product))}>
+            Add to Cart
+          </Button>
         </AboutCard>
       </CardWrapper>
     </>

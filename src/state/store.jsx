@@ -7,6 +7,6 @@ export default configureStore({
   reducer: {
     products: ProductReducer,
     cart: CartReducer,
-    toggleCart: CartOpenReducer,
+    cartOpen: CartOpenReducer,
   },
 });

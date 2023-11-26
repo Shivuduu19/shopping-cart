@@ -1,8 +1,13 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "phosphor-react";
+import { useDispatch, useSelector } from "react-redux";
+import { openCart } from "../pages/cart/CartOpenSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  // const opencart = useSelector((state) => state.cartOpen.value);
+  // console.log(opencart);
   return (
     <>
       <HeaderWrapper>
@@ -12,7 +17,9 @@ const Header = () => {
             <NavbarLink to="/">Home</NavbarLink>
             <NavbarLink to="products">Products</NavbarLink>
             <NavbarLink to="contact">Contact</NavbarLink>
-            <CartButton as="button">{<ShoppingCart />}</CartButton>
+            <CartButton as="button" onClick={() => dispatch(openCart())}>
+              {<ShoppingCart />}
+            </CartButton>
           </Navbar>
         </Container>
       </HeaderWrapper>
