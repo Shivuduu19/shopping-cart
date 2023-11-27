@@ -7,24 +7,35 @@ import { closeCart } from "./CartOpenSlice";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.value);
+  // console.log(cart);
   const dispatch = useDispatch();
   const isCartOpen = useSelector((state) => state.cartOpen.value);
+  const cartItems = cart.map((cartItem) => (
+    <CartItemCard
+      key={uuidv4}
+      id={cartItem.id}
+      title={cartItem.title}
+      image={cartItem.image}
+      price={cartItem.price}
+      quantity={cartItem.quantity}
+    ></CartItemCard>
+  ));
+
   // console.log(isCartOpen);
+
+  const sumTotal = () =>
+    cart
+      .reduce(
+        (total, cartItem) => total + cartItem.price * cartItem.quantity,
+        0
+      )
+      .toFixed(2);
+  // console.log(sumTotal);
   return (
     <CardWrapper $isOpen={isCartOpen}>
       <Title>Your cart items</Title>
-      <Products>
-        {cart.map((cartItem) => {
-          <CartItemCard
-            id={uuidv4}
-            title={cartItem.title}
-            image={cartItem.image}
-            price={cartItem.price}
-            quantity={cartItem.quantity}
-          />;
-        })}
-      </Products>
-
+      <Products>{cartItems}</Products>
+      <Total>{sumTotal()}</Total>
       <Button
         onClick={() => {
           dispatch(closeCart());

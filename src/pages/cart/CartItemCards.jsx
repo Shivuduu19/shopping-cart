@@ -8,7 +8,8 @@ function CartItemCard({ id, title, price, image, quantity }) {
   const cartItem = { id, title, price, image, quantity };
   const product = { id, title, price, image };
   const dispatch = useDispatch();
-  const sumPrice = () => cartItem.price * cartItem.quantity;
+  const sumPrice = () => (cartItem.price * cartItem.quantity).toFixed(2);
+  // console.log(cartItem.id);
   return (
     <CartItemWrapper>
       <ImageContainer>
@@ -16,13 +17,16 @@ function CartItemCard({ id, title, price, image, quantity }) {
       </ImageContainer>
       <Details>
         <Title>{title}</Title>
-        <div>{sumPrice()}</div>
+
+        <div>
+          quantity:{cartItem.quantity} price: {sumPrice()}
+        </div>
         <ItemAmountWrapper>
-          <Button onClick={dispatch(removeItem(product))}>
+          <Button onClick={() => dispatch(removeItem(product))}>
             {<Minus size={32} />}
           </Button>
           <div>{price}</div>
-          <Button onClick={dispatch(addItem(product))}>
+          <Button onClick={() => dispatch(addItem(product))}>
             {<Plus size={32} />}
           </Button>
         </ItemAmountWrapper>
