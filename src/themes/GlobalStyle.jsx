@@ -11,6 +11,15 @@ html{
     position: relative;
     min-height: 100%;
 }
+body{
+
+}
+@media (max-width: 1600px) {
+    font-size: 55%;
+}
+@media (max-width: 1400px) {
+    font-size: 45%;
+}
 a{
     text-decoration: none;
 }`;

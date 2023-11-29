@@ -41,6 +41,7 @@ const ImageContainer = styled.div`
 `;
 const Image = styled.img`
   height: 100%;
+  max-width: 100%;
 `;
 const AboutCard = styled.div`
   display: flex;

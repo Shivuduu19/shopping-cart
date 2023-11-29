@@ -43,8 +43,15 @@ const Products = () => {
 const ProductsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 4rem;
   font-size: 2rem;
   animation: ${fadein} 2s ease;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, minmax(24rem, 30rem));
+    justify-content: center;
+  }
+  @media (max-width: 460px) {
+    grid-template-columns: repeat(1, 36rem);
+  }
 `;
 export default Products;

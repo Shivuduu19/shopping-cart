@@ -33,12 +33,19 @@ const Header = () => {
 };
 const HeaderWrapper = styled.header`
   background-color: #000;
+  width: 100%;
 `;
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 3rem;
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 3rem;
+  }
 `;
 const LogoName = styled.h1`
   color: #4677d3;
@@ -50,6 +57,10 @@ const Navbar = styled.nav`
   align-content: center;
   gap: 6rem;
   font-size: 2rem;
+  @media (max-width: 480px) {
+    width: 100%;
+    gap: 3rem;
+  }
 `;
 const NavbarLink = styled(Link)`
   display: flex;
