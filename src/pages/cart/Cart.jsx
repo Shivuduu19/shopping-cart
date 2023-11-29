@@ -35,15 +35,18 @@ const Cart = () => {
     <CardWrapper $isOpen={isCartOpen}>
       <Title>Your cart items</Title>
       <Products>{cartItems}</Products>
-      <Total>{sumTotal()}</Total>
+      <Total>Total:{sumTotal()}</Total>
       <Button
+        $color="green"
         onClick={() => {
           dispatch(closeCart());
         }}
       >
         Checkout
       </Button>
-      <Button onClick={() => dispatch(closeCart())}>close</Button>
+      <Button $color="red" onClick={() => dispatch(closeCart())}>
+        close
+      </Button>
     </CardWrapper>
   );
 };
@@ -82,12 +85,25 @@ const Products = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  /* height: 40%; */
   width: 100%;
   overflow: auto;
 `;
 const Total = styled.div`
   font-weight: bold;
+  padding: 3rem;
 `;
 const Button = styled.button`
-font-size2rem`;
+  font-size: 2rem;
+  width: 100%;
+  background-color: ${(props) => props.$color};
+  /* ${(props) =>
+    props.$color
+      ? css`
+          background-color: green;
+        `
+      : css`
+          background-color: red;
+        `} */
+`;
 export default Cart;

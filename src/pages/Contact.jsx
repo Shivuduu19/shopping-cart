@@ -1,10 +1,17 @@
-import { Link } from "react-router-dom";
+import styled from "styled-components";
+
 const Contact = () => {
   return (
-    <>
-      <h1>socnd link</h1>
-      <Link to="/">back to home</Link>
-    </>
+    <ContactWrapper>
+      <h1>phone no:8919687188</h1>
+      <h1>Email:shivakamtam19@gmail.com</h1>
+    </ContactWrapper>
   );
 };
+const ContactWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
 export default Contact;

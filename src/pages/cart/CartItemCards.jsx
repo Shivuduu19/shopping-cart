@@ -8,6 +8,10 @@ function CartItemCard({ id, title, price, image, quantity }) {
   const cartItem = { id, title, price, image, quantity };
   const product = { id, title, price, image };
   const dispatch = useDispatch();
+
+  const formatText = (title) => {
+    return title.length === 12 ? title : title.substr(0, 12) + "...";
+  };
   const sumPrice = () => (cartItem.price * cartItem.quantity).toFixed(2);
   // console.log(cartItem.id);
   return (
@@ -16,7 +20,7 @@ function CartItemCard({ id, title, price, image, quantity }) {
         <Image src={image} alt={title} />
       </ImageContainer>
       <Details>
-        <Title>{title}</Title>
+        <Title>{formatText(title)}</Title>
 
         <div>
           quantity:{cartItem.quantity} price: {sumPrice()}
@@ -58,13 +62,16 @@ const Details = styled.div`
 const Title = styled.div`
   height: 3rem;
   font-weight: bold;
+  /* text-overflow: ellipsis; */
   overflow: hidden;
 `;
 const ItemAmountWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: inherit3rem;
+  gap: 3rem;
 `;
-const Button = styled.button``;
+const Button = styled.button`
+  background-color: rgba(0, 0, 0, 0.1);
+`;
 
 export default CartItemCard;

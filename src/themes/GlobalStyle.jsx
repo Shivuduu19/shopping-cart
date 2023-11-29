@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
 }
 html{
     font-size: 70%;
+    position: relative;
+    min-height: 100%;
 }
 a{
     text-decoration: none;

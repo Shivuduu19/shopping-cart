@@ -6,7 +6,9 @@ import { openCart } from "../pages/cart/CartOpenSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
-  // const opencart = useSelector((state) => state.cartOpen.value);
+  const cart = useSelector((state) => state.cart.value);
+  const sumQuantity = () =>
+    cart.reduce((total, item) => total + item.quantity, 0);
   // console.log(opencart);
   return (
     <>
@@ -17,9 +19,12 @@ const Header = () => {
             <NavbarLink to="/">Home</NavbarLink>
             <NavbarLink to="products">Products</NavbarLink>
             <NavbarLink to="contact">Contact</NavbarLink>
-            <CartButton as="button" onClick={() => dispatch(openCart())}>
-              {<ShoppingCart />}
-            </CartButton>
+            <ButtonContainer>
+              <CartButton as="button" onClick={() => dispatch(openCart())}>
+                {<ShoppingCart size="30px" />}
+              </CartButton>
+              {sumQuantity() ? <Quantity>{sumQuantity()}</Quantity> : ""}
+            </ButtonContainer>
           </Navbar>
         </Container>
       </HeaderWrapper>
@@ -62,5 +67,23 @@ const CartButton = styled(NavbarLink)`
   &:active {
     transform: scale(1.1);
   }
+`;
+const ButtonContainer = styled.div`
+  position: relative;
+  cursor: pointer;
+`;
+const Quantity = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 3rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50px;
+  background-color: #793333;
+  font-size: large;
+  font-family: bold;
 `;
 export default Header;
