@@ -43,11 +43,11 @@ const Products = () => {
 const ProductsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
+  gap: 3rem;
   font-size: 2rem;
   animation: ${fadein} 2s ease;
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, minmax(24rem, 30rem));
+    grid-template-columns: repeat(2, minmax(28rem, 36rem));
     justify-content: center;
   }
   @media (max-width: 460px) {
