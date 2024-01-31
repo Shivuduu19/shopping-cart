@@ -9,7 +9,8 @@ const Header = () => {
   const cart = useSelector((state) => state.cart.value);
   const sumQuantity = () =>
     cart.reduce((total, item) => total + item.quantity, 0);
-  // console.log(opencart);
+  console.log(login);
+
   return (
     <>
       <HeaderWrapper>
@@ -19,6 +20,9 @@ const Header = () => {
             <NavbarLink to="/">Home</NavbarLink>
             <NavbarLink to="products">Products</NavbarLink>
             <NavbarLink to="contact">Contact</NavbarLink>
+            {login ? null : (
+              <VerifyContainer to="login">signin</VerifyContainer>
+            )}
             <ButtonContainer>
               <CartButton as="button" onClick={() => dispatch(openCart())}>
                 {<ShoppingCart size="30px" />}
@@ -71,6 +75,9 @@ const NavbarLink = styled(Link)`
   &:hover {
     transform: scale(1.3);
   }
+`;
+const VerifyContainer = styled(Link)`
+  margin: auto;
 `;
 const CartButton = styled(NavbarLink)`
   border-radius: 40px;
