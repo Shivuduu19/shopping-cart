@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { setLogin } from "./LoginSlice";
 
-export const LogIn = ({ handleLogin }) => {
+export const LogIn = () => {
   const userRef = useRef();
   const errorRef = useRef();
-
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [errorMsg, setErrormsg] = useState("");
   const [success, setSuccess] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     userRef.current.focus();
@@ -17,11 +19,13 @@ export const LogIn = ({ handleLogin }) => {
   useEffect(() => {
     setErrormsg("");
   }, [user, pwd]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSuccess(true);
     setPwd("");
     setUser("");
+    dispatch(setLogin(true));
   };
   return (
     <div className="app">
@@ -67,7 +71,7 @@ export const LogIn = ({ handleLogin }) => {
                 value={pwd}
                 required
               />
-              <button onClick={handleLogin}>Sign In</button>
+              <button>Sign In</button>
             </form>
             <p>
               Need an account?

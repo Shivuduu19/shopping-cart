@@ -7,9 +7,10 @@ import { openCart } from "../pages/cart/CartOpenSlice";
 const Header = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.value);
+  const login = useSelector((state) => state.login.value);
   const sumQuantity = () =>
     cart.reduce((total, item) => total + item.quantity, 0);
-  console.log(login);
+  // console.log(login);
 
   return (
     <>

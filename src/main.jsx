@@ -7,14 +7,14 @@ import Home from "./pages/Home.jsx";
 import Products from "./pages/products/Products.jsx";
 import Contact from "./pages/Contact.jsx";
 import "./index.css";
-import { LogIn } from "./pages/LogIn.jsx";
+import { LogIn } from "./pages/login/LogIn.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home />,
       },
       { path: "products", element: <Products /> },
