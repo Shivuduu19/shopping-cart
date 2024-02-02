@@ -13,5 +13,10 @@ const ContactWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 20px;
+    }
+  }
 `;
 export default Contact;
