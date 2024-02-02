@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { setLogin } from "./LoginSlice";
 
 export const LogIn = () => {
@@ -31,13 +31,7 @@ export const LogIn = () => {
     <div className="app">
       <>
         {success ? (
-          <section>
-            <h1>You are logged in!</h1>
-            <br />
-            <p>
-              <Link to="/">Go to Home</Link>
-            </p>
-          </section>
+          <Navigate to="/" replace={true} />
         ) : (
           <section>
             <p
