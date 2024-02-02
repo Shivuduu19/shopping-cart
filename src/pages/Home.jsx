@@ -76,6 +76,7 @@ const IntoBigger = styled.div`
   }
   @media (max-width: 460px) {
     font-size: 3rem;
+    color: #5e3b9b;
   }
 `;
 const Button = styled.button`
@@ -83,6 +84,6 @@ const Button = styled.button`
   text-transform: uppercase;
   border-radius: 20px;
   padding: 1rem;
-  /* color: #134913; */
+  color: #cfcfee;
 `;
 export { fadein };
