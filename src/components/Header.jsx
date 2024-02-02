@@ -64,7 +64,8 @@ const Navbar = styled.nav`
   font-size: 2rem;
   @media (max-width: 480px) {
     width: 100%;
-    gap: 3rem;
+    gap: 1rem;
+    font-size: 1rem;
   }
 `;
 const NavbarLink = styled(Link)`
