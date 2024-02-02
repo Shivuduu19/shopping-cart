@@ -16,10 +16,8 @@ const ProductCard = ({ id, image, title, price, category }) => {
             <Title>{title}</Title>
             <div>{price}</div>
           </Info>
-          <Button onClick={() => dispatch(addItem(product))}>
-            Add to Cart
-          </Button>
         </AboutCard>
+        <Button onClick={() => dispatch(addItem(product))}>Add to Cart</Button>
       </CardWrapper>
     </>
   );
@@ -54,7 +52,8 @@ const AboutCard = styled.div`
 const Info = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: flex-start;
   gap: 1rem;
   height: 100%;
 `;
@@ -64,5 +63,8 @@ const Title = styled.div`
 `;
 const Button = styled.button`
   color: #000;
+  margin: 1rem;
+  margin-top: auto;
+  margin-bottom: 1rem;
 `;
 export default ProductCard;
