@@ -4,3 +4,13 @@ This project is built with React,Redux,styled-componenets
 
 Live:
 [https://courageous-licorice-77b6d5.netlify.app/]
+
+Made this using:
+
+- React
+- react-redux for state management
+- Fake API for products
+- styled-components for styling
+- react-router-dom for routing
+- uuid package for unique keys
+- react-icons for icons
