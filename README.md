@@ -6,6 +6,7 @@ Live:
 Made this using:
 
 - React
+- vite
 - react-redux for state management
 - Fake API for products
 - styled-components for styling
