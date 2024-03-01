@@ -55,6 +55,9 @@ const Container = styled.div`
 const LogoName = styled.h1`
   color: #4677d3;
   font-size: 6rem;
+  padding: 50px;
+  padding-left: 9rem;
+  font-weight: 700;
 `;
 const Navbar = styled.nav`
   display: flex;
@@ -72,7 +75,9 @@ const NavbarLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #005678;
+  color: #91c1d4;
+  font-size: 40px;
+  font-weight: 600;
   transition: trasform 0.2s ease-in;
   &:hover {
     transform: scale(1.3);

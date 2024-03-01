@@ -12,7 +12,7 @@ html{
     min-height: 100%;
 }
 body{
-
+background-color: aliceblue;
 }
 @media (max-width: 1600px) {
     font-size: 55%;

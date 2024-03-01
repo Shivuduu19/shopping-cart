@@ -24,8 +24,11 @@ const HomeWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  gap: 2rem;
-  background-color: #00ff55;
+  border-radius: 15px;
+  height: 60vh;
+  gap: 5rem;
+  background-color: #2c7c47;
+  /* background: transparent; */
   @media (max-width: 460px) {
     flex-direction: column;
   }
@@ -39,7 +42,7 @@ const fadein = keyframes`
         }
     `;
 const Image = styled.img`
-  width: 40rem;
+  width: 60rem;
   border-radius: 50px;
   animation: 2s ease ${fadein};
   @media (max-width: 460px) {
@@ -58,9 +61,9 @@ const HomeInfo = styled.div`
   }
 `;
 const IntroInfo = styled.div`
-  color: #1c0adc;
+  color: #7b72e6;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 4rem;
   text-align: center;
   text-transform: uppercase;
   @media (max-width: 460px) {
@@ -81,9 +84,16 @@ const IntoBigger = styled.div`
 `;
 const Button = styled.button`
   background-color: #000;
+  margin-top: 4rem;
   text-transform: uppercase;
-  border-radius: 20px;
-  padding: 1rem;
+  border-radius: 50px;
+  padding: 3rem 8rem;
+  font-size: xx-large;
+  font-weight: 800;
   color: #cfcfee;
+  transition: transform 0.15s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 export { fadein };

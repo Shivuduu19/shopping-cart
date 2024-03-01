@@ -26,7 +26,7 @@ const FooterWrapper = styled.footer`
   width: 100%;
   font-size: 2rem;
   padding: 1rem 0;
-  background-color: pink;
+  /* background-color: pink; */
 `;
 const GithubLink = styled.a`
   margin-left: 1rem;
