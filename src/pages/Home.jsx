@@ -87,13 +87,13 @@ const Button = styled.button`
   margin-top: 4rem;
   text-transform: uppercase;
   border-radius: 50px;
-  padding: 3rem 8rem;
+  padding: 2rem 8rem;
   font-size: xx-large;
   font-weight: 800;
   color: #cfcfee;
   transition: transform 0.15s ease-in-out;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.13);
   }
 `;
 export { fadein };
